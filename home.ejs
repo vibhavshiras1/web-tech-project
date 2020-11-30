@@ -1,0 +1,229 @@
+<html>
+    <head><title>
+        Home Page
+    </title></head>
+
+    <style>
+        body, html{
+            height: 100%;
+            margin: 0;
+        }
+        .heading1{
+            color: white;
+            font-size: 45px;
+            background-color: darkblue;
+            width: 100%;
+            position: sticky;
+            height: 65px;
+        }
+        h2{
+            position: absolute;
+            left: 50px;
+            font-size: 50px;
+            top: 70px;
+        }
+        .drop-content{
+            position: absolute;
+            top: 160px;
+            font-size: 34px;
+            display: none;
+            left: 30px;
+        }
+        .drop:hover .drop-content{
+            display: block;
+        }
+        .images{
+            top: 100px;
+            left: 500px;
+            position: absolute;
+        }
+        .li-ele li{
+           
+            cursor: pointer;
+        }
+        .li-ele li:hover{
+            color: blue;
+        }
+        .movie-ele li{
+            margin-bottom: 15px;
+        }
+        .heading2{
+            position: absolute;
+            top: 100px;
+            left: 1000px;
+            font-size: 40px;
+            color: white;
+        }
+        .movie-ele{
+            color: white;
+            position: absolute;
+            top: 210px;
+            left: 980px;
+            font-size: 35px;
+        }
+        .info{
+            color: white;
+            background-color: black;
+            position: absolute;
+            top: 550px;
+            left: 1150px;
+            font-size: 30px;
+            cursor: pointer;
+            
+        }
+        .info:hover{
+            color: blue;
+        }
+        .genre_btn{
+            background-color: black;
+            color: white;
+            font-size: 35px;
+            
+            font-family: 'Times New Roman', Times, serif;
+        }
+        .search1{
+            position: absolute;
+            left: 50px;
+            top: 15px;
+            width: 350px;
+            font-size: 20px;
+            height: 35px;
+            padding: 12px 20px 12px 20px;
+            border-radius: 8px;
+        }
+
+        #myUL {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+            position: absolute;
+            top: 50px;
+            left: 50px;
+            width: 350px;
+        }
+
+        #myUL li a {
+            border: 1px solid #ddd;
+            margin-top: -1px; /* Prevent double borders */
+            background-color: #f6f6f6;
+            padding: 12px;
+            text-decoration: none;
+            font-size: 18px;
+            color: black;
+            display: block
+        }
+
+        #myUL li a:hover:not(.header) {
+            background-color: #eee;
+        }
+    </style>
+
+    <body bgcolor="black">
+        <h1 class="heading1"><center>Movie Website</center></h1>
+        <input type="text" placeholder="Search for movies..." class="search1" id="search1" onkeyup="myFunction()">
+
+        <ul id="myUL">
+            <li><a href="/home/endgame">Avengers:Endgame</a></li>
+            <li><a href="#">Joker</a></li>
+          
+            <li><a href="#">Titanic</a></li>
+            <li><a href="#">1917</a></li>
+          
+            <li><a href="#">Baby Driver</a></li>
+            <li><a href="#">Bloodshot</a></li>
+            <li><a href="/home/action/venom">Venom</a></li>
+          </ul>
+
+        <div class="drop">
+        <h2 style="color: white; cursor: pointer;" id="genre">Genres ></h2>
+        <div class="drop-content" style="color: white;">
+            <ul class="li-ele">
+                <form action="/home/action" method="POST">
+                    <button type="submit" class="genre_btn"><li>Action</li></button>
+                    </form>
+                <form action="/home/drama" method="POST">
+                <button type="submit" class="genre_btn"><li>Drama</li></button>
+                </form>
+                <form action="/home/thriller" method="POST">
+                <button type="submit" class="genre_btn"><li>Thriller</li></button>
+                </form>
+                <form action="/home/horror" method="POST">
+                <button type="submit" class="genre_btn"><li>Horror</li></button>
+                </form>
+                
+                <form action="/home/comedy" method="POST">
+                <button type="submit" class="genre_btn"><li>Comedy</li></button>
+                </form>
+               
+            </ul>
+        </div>
+        </div>
+        <div class="images">
+            <img id="image1" src="https://www.vintagemovieposters.co.uk/wp-content/uploads/2020/01/IMG_2893.jpeg" height="530px" width="400px">
+        </div>
+        <div class="rated">
+        <h2 class="heading2">Highest Rated Movies</h2>
+        <ul class="movie-ele">
+            <li>The Shawshank Redemption (1994)</li>
+            <li>The Godfather (1972)</li>
+            <li>Parasite (2019)</li>
+            <li>Joker (2019)</li>
+            <li>Coco (2017)</li>
+        </ul>
+        </div>
+        <form action="/home/info" method="POST">
+        <button type="submit" class="info" id="info_btn">More Info ></button>
+        </form>
+    </body>
+
+    <script>
+        var count = 0;
+
+        const changeimg = setInterval(() => {
+            if(count%5==0){
+            document.getElementById('image1').src = "https://images-na.ssl-images-amazon.com/images/I/71niXI3lxlL._AC_SY679_.jpg";
+            count++;
+            }
+            else if(count%5==1){
+            document.getElementById('image1').src = "https://cdn.shopify.com/s/files/1/0969/9128/products/1917_-_Sam_Mendes_-_Hollywood_War_Film_Classic_English_Movie_Poster_a12704bd-2b25-4aa7-8c8d-8f40cf467dc7.jpg?v=1582781089";
+            count++;
+            }
+            else if(count%5==2){
+            document.getElementById('image1').src = "https://www.digitalartsonline.co.uk/cmsdata/slideshow/3662115/baby-driver-rory-hi-res.jpg";
+            count++;
+            }
+            else if(count%5==3){
+            document.getElementById('image1').src = "https://cdn.shopify.com/s/files/1/1416/8662/products/titanic_1997_styleA_original_film_art_1200x.jpg?v=1591898438";
+            count++;
+            }
+            else if(count%5==4){
+            document.getElementById('image1').src = "https://www.vintagemovieposters.co.uk/wp-content/uploads/2020/01/IMG_2893.jpeg";
+            count++;
+            }
+        }, 2000);
+
+        function myFunction() {
+    var input, filter, ul, li, a, i, txtValue;
+    input = document.getElementById("search1");
+    filter = input.value.toUpperCase();
+    ul = document.getElementById("myUL");
+    li = ul.getElementsByTagName("li");
+    for (i = 0; i < li.length; i++) {
+        console.log(li[i]);
+        a = li[i].getElementsByTagName("a")[0];
+        
+        txtValue = a.textContent || a.innerText;
+        if (txtValue.toUpperCase().indexOf(filter) > -1) {
+        	if(document.getElementById("search1").value){
+            li[i].style.display = "";}
+            else{
+            li[i].style.display = "none";}
+        } else {
+            li[i].style.display = "none";
+        }
+    }
+    document.getElementById("myUL").style.visibility = "visible";
+}
+document.getElementById("myUL").style.visibility = "hidden";
+    </script>
+</html>
