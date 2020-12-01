@@ -1,0 +1,89 @@
+<html>
+    <head><title>Movies</title>
+        <script crossdomain src="https://unpkg.com/react@16/umd/react.development.js"> </script> 
+		<script crossdomain src="https://unpkg.com/react-dom@16/umd/react-dom.development.js"> </script> 
+        <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"> </script>
+    </head>
+    
+    <body bgcolor="black">
+        <div id="root"></div>
+
+        <script type="text/babel">
+        
+
+            class Info extends React.Component{
+                constructor(props){
+                    super(props);
+                    this.state = {total : '',n : '',avg : ''};
+                }
+                render(){
+                    return(
+                        <div>
+                            <h1 class="heading1"><center>Highest Rated Movies</center></h1>
+                            <img src={"https://d2e111jq13me73.cloudfront.net/sites/default/files/styles/product_image_aspect_switcher_170w/public/product-images/csm-movie/shaw-poster.jpg?itok=RQn-PjG5"} class="image1"/>
+                            <h2 class="heading2">The Shawshank Redemption</h2> 
+                            <p class="star">&#9734; 9.3</p>
+                            <div class="info1">
+                                <p>Year : 1994</p>
+                                <p>Description : Andy Dufresne, a successful banker, is arrested for the murders of his wife and her lover, 
+                                    and is sentenced to life imprisonment at the Shawshank prison. He becomes the most unconventional prisoner.</p>
+                                </div>
+
+                            <img src={"https://m.media-amazon.com/images/M/MV5BM2MyNjYxNmUtYTAwNi00MTYxLWJmNWYtYzZlODY3ZTk3OTFlXkEyXkFqcGdeQXVyNzkwMjQ5NzM@._V1_.jpg"} style={{top:'450px'}} class="image1"/>
+                            <h2 class="heading2" style={{top:'450px'}}>The Godfather</h2> 
+                            <p class="star" style={{top:'360px'}}>&#9734; 9.2</p>
+                            <div class="info1" style={{top:'500px'}}>
+                                <p>Year : 1972</p>
+                                <p>Don Vito Corleone, head of a mafia family, decides to hand over his empire to his youngest son Michael.
+                                     However, his decision unintentionally puts the lives of his loved ones in grave danger.</p>
+                                </div>
+                                
+                            </div>
+                    )
+                }
+            }
+
+            ReactDOM.render(<Info/>,document.getElementById('root'));
+        </script>
+    </body>
+    <style>
+        body, html{
+    height: 100%;
+    margin: 0;
+}
+.heading1{
+    color: white;
+    font-size: 40px;
+    background-color: darkblue;
+    width: 100%;
+    position: sticky;
+}
+.image1{
+    height: 300px;
+    width: 180px;
+    left: 20px;
+    position: absolute;
+}
+.heading2{
+    position: absolute;
+    left: 220px;
+    color: white;
+    font-size: 30px;
+}
+.info1{
+    position: absolute;
+    left: 220px;
+    top: 120px;
+    font-size: 28px;
+    color: white;
+}
+.star{
+    font-size: 30px;
+    position: absolute;
+    top: -30px;
+    left: 800px;
+    color: gold;
+    font-size: 100px;
+}
+    </style>
+</html>
